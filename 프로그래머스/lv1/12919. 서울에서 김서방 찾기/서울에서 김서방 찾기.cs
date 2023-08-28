@@ -1,14 +1,10 @@
+using System; 
 public class Solution {
-         public string solution(string[] seoul)
+        public string solution(string[] seoul)
             {
-                string answer = "";
+                int answer = 0;
 
-                for(int i = 0; i<seoul.Length; i++)
-                {
-                    if (seoul[i] == "Kim")
-                        return answer = $"김서방은 {i.ToString()}에 있다"; 
-                }
-
-                return " ";
+                answer = Array.FindIndex(seoul, i => i == "Kim");
+                return $"김서방은 {answer}에 있다"; 
             }
 }
