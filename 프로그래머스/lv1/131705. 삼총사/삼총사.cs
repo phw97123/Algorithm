@@ -1,24 +1,22 @@
 using System;
 
 public class Solution {
-    public int solution(int[] numbers)
+     public int solution(int[] numbers)
             {
-                int answer = 0;
-                int n = numbers.Length;
-                for (int i = 0; i < n; i++)
+                int count = 0; 
+                for(int i = 0; i<numbers.Length; i++)
                 {
-                    for (int j = i + 1; j < n; j++)
+                    for(int j = i+1;  j<numbers.Length; j++)
                     {
-                        for (int k = j + 1; k < n; k++)
+                        for(int k= j+1; k<numbers.Length; k++)
                         {
                             if (numbers[i] + numbers[j] + numbers[k] == 0)
-                            {
-                                answer++;
-                            }
+                                count++; 
                         }
                     }
-
                 }
-                return answer;
+                Console.WriteLine(count); 
+
+                return count; 
             }
 }
