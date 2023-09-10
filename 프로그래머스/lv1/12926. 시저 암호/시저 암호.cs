@@ -1,20 +1,29 @@
 public class Solution {
-     public string solution(string s, int n)
+   public string solution(string s, int n)
             {
                 string answer = "";
-
-                for(int i = 0;i<s.Length; i++)
+                for (int i = 0; i < s.Length; i++)
                 {
-                    char c = s[i];
+                    if (s[i] != ' ')
+                    {
+                        char c = (char)(s[i] +n);
+                        if (char.IsLower(s[i]))
+                        {
+                            if (c > 'z')
+                                c = (char)(c - 26);  
+                        }
+                        else if (char.IsUpper(s[i]))
+                        {
+                            if (c > 'Z')
+                                c = (char)(c - 26); 
+                        }
 
-                    if (char.IsLower(c))
-                        c = (char)((c - 'a' + n) % 26 + 'a');
-
-                    else if (char.IsUpper(c))
-                        c = (char)((c - 'A' + n) % 26 + 'A');
-
-                    answer += c; 
+                        answer += c; 
+                    }
+                    else
+                        answer += ' ';
                 }
+                
                 return answer;
             }
 }
