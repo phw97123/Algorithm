@@ -1,23 +1,19 @@
 using System;
 
 public class Solution {
-     public int solution(string s) {
-        int answer = 0;
-        s = s.Replace("zero", "0");
-        s = s.Replace("one", "1");
-        s = s.Replace("two", "2");
-        s = s.Replace("three", "3");
-        s = s.Replace("four", "4");
-        s = s.Replace("five", "5");
-        s = s.Replace("six", "6");
-        s = s.Replace("seven", "7");
-        s = s.Replace("eight", "8");
-        s = s.Replace("nine", "9");
+     public int solution(string s)
+            {
+                int answer = 0;
+                string[] strArray = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" }; 
 
-        int k;
-        bool strToInt = int.TryParse(s, out k);    
-        if(strToInt) answer = k;                    
-        
-        return answer;                              
-    }
+                for(int i = 0; i<strArray.Length; i++)
+                {
+                    if (s.Contains(strArray[i]))
+                    {
+                        s = s.Replace(strArray[i],i.ToString()); 
+                    }
+                }
+                answer = int.Parse(s); 
+                return answer;
+            }
 }
