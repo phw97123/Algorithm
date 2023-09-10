@@ -1,10 +1,10 @@
 # [level 1] K번째수 - 42748 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42748) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42748?language=csharp) 
 
 ### 성능 요약
 
-메모리: 3.63 MB, 시간: 0.01 ms
+메모리: 31.2 MB, 시간: 1.78 ms
 
 ### 구분
 
