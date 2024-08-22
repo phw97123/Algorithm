@@ -4,31 +4,21 @@ using namespace std;
 
 int main()
 {
-
-	int n; 
-	cin >> n; 
-	int result = 1;
+	int n;
+	cin >> n;
+	int i = 0;
 
 	if (n == 1)
 	{
-		cout << result;
-		return 0 ; 
+		cout << 1; 
+		return 0; 
 	}
-
-	int min = 2; 
-	int max = 7;
-
-	while(true)
+	
+	for (int sum = 2; sum <= n; i++)
 	{
-		if (n>=min && n<=max)
-		{
-			cout << result+1;
-			break;
-		}
-
-		min += 6 * result;
-		result++;
-		max += 6 * result;
+		sum += 6 * i;
 	}
+
+	cout << i; 
 }
 
