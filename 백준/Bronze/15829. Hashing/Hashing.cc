@@ -1,5 +1,4 @@
 #include <iostream>
-#include <math.h>
 
 using namespace std;
 
@@ -11,13 +10,15 @@ int main()
 	cin >> l; 
 	cin >> s; 
 
-	int result = 0; 
+	long long result = 0; 
+	long long r = 1; 
+	const int m = 1234567891; 
 	
-	for (int i = 0; i < s.size(); i++)
+	for (int i = 0; i < l; i++)
 	{
-		result += (s[i] - 96) * pow(31, i); 
+		result = (result + (s[i] - 'a' + 1) * r) % m; 
+		r = (r * 31 )%m; 
 	}
-
-	cout << result; 
+	cout << result;
 }
 
