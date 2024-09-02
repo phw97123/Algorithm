@@ -1,40 +1,39 @@
 #include <iostream>
-#include <vector>
 #include <unordered_map>
 
 using namespace std;
 
 int main()
 {
-	vector<int> v;
-	unordered_map<int, int> map;
-	int n, m;
+	ios_base::sync_with_stdio(false); 
+	cin.tie(NULL); 
+	cout.tie(NULL); 
 
-	cin >> n;
+	unordered_map<int, int> map; 
+	int n,m; 
+	cin >> n; 
+
 	for (int i = 0; i < n; i++)
 	{
-		int num, cnt = 1;
-		cin >> num;
-		auto it = map.find(num); 
-		if (!map.empty() && it != map.end())
-			it->second++; 
+		int a; 
+		cin >> a; 
+
+		auto it = map.find(a); 
+		if (it != map.end())
+			map[a]++;
 		else
-			map.insert({ num,cnt });
+			map.insert({ a, 1 });
 	}
 
 	cin >> m; 
 	for (int i = 0; i < m; i++)
 	{
-		int num; 
-		cin >> num; 
-		v.push_back(num); 
-	}
+		int a; 
+		cin >> a; 
 
-	for (auto num : v)
-	{
-		auto it = map.find(num); 
+		auto it = map.find(a); 
 		if (it != map.end())
-			cout << it->second << ' '; 
+			cout << map[a] << ' ';
 		else
 			cout << 0 << ' '; 
 	}
