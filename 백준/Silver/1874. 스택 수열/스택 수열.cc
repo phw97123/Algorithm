@@ -22,24 +22,28 @@ int main()
 		v.push_back(a);
 	}
 
-	int cnt = 1;
-	while (!v.empty())
+	int currentNum = 1;
+	
+	for (int i = 0; i < n; i++)
 	{
-		if (s.empty() || v[0] != s.top() && cnt <=n)
+		int target = v[0]; 
+
+		while (currentNum <= target)
 		{
-			s.push(cnt++);
-			cV.push_back('+');
+			s.push(currentNum++); 
+			cV.push_back('+'); 
 		}
-		else if (cnt > n && v[0] != s.top())
+
+		if (s.top() == target)
 		{
-			cout << "NO";
-			return 0;
+			s.pop(); 
+			cV.push_back('-'); 
+			v.erase(v.begin()); 
 		}
 		else
 		{
-			cV.push_back('-');
-			s.pop();
-			v.erase(v.begin());
+			cout << "NO"; 
+			return 0; 
 		}
 	}
 
