@@ -57,7 +57,7 @@ int main()
 		}
 	}
 
-	sort(modes.begin(), modes.end()); 
+	sort(modes.begin(), modes.end());
 
 	if (modes.size() > 1)
 		cout << modes[1] << '\n';
