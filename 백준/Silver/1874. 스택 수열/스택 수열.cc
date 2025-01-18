@@ -1,44 +1,46 @@
 #include <iostream>
-#include <stack>
 #include <vector>
+#include <string>
+#include <sstream>
+#include <stack>
+
 using namespace std;
 
-int main()
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+int main() {
 
-	vector<int> v;
-	vector<char> cV;
-	stack<int>s;
-	int n;
-	cin >> n;
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	vector<int> v; 
+	vector<int> result; 
+	vector<char> vc;
+	stack<int> st;
+
+	int n; 
+	cin >> n; 
 
 	for (int i = 0; i < n; i++)
 	{
-		int a;
-		cin >> a;
-		v.push_back(a);
+		int num; 
+		cin >> num; 
+		v.push_back(num); 
 	}
 
-	int currentNum = 1;
-	
+	int curNum = 1; 
 	for (int i = 0; i < n; i++)
 	{
-		int target = v[0]; 
+		int target = v[i]; 
 
-		while (currentNum <= target)
+		while (curNum<=target)
 		{
-			s.push(currentNum++); 
-			cV.push_back('+'); 
+			st.push(curNum++); 
+			vc.push_back('+'); 
 		}
 
-		if (s.top() == target)
+		if (target == st.top())
 		{
-			s.pop(); 
-			cV.push_back('-'); 
-			v.erase(v.begin()); 
+			st.pop(); 
+			vc.push_back('-');
 		}
 		else
 		{
@@ -47,8 +49,8 @@ int main()
 		}
 	}
 
-	for (auto c : cV)
+	for (auto c : vc)
 	{
-		cout << c << '\n';
+		cout << c << '\n'; 
 	}
 }
